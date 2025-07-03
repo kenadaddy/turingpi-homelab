@@ -16,7 +16,7 @@ spec:
       nodeSelector:
         kubernetes.io/arch: amd64
       containers:
-        - image: gcr.io/google-samples/gb-frontend:v5
+        - image: nginx:latest
           name: guestbook-ui 
           ports:
             - containerPort: 80
