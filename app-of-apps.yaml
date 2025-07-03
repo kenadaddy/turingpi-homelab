@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: apps
-    repoURL: https://github.com/kenadaddy/turingpi-homelab.git
+    repoURL: https://github.com/kenadaddy/turingpi-homelab
     targetRevision: HEAD
     directory:
       recurse: false
