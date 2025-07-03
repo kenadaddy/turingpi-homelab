@@ -16,5 +16,7 @@ spec:
       containers:
         - image: gcr.io/google-samples/gb-frontend:v5
           name: guestbook-ui
+          nodeSelector:
+            kubernetes.io/os: linux
           ports:
             - containerPort: 80
