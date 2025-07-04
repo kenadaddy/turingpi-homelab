@@ -7,6 +7,5 @@ config:
       targetRevision: main
 
 stacks:
+  - name: monitoring
   - name: apps
-#examples:
-#  - name: apps
