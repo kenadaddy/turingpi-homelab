@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: guestbook-ui
   annotations:
-    metallb.universe.tf/address-pool: 192.168.68.240-192.168.68.250
+    metallb.universe.tf/address-pool: default-pool
 spec:
   type: LoadBalancer
   selector:
