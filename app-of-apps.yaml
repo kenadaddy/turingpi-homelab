@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    path: apps
+    path: root
     repoURL: https://github.com/kenadaddy/turingpi-homelab
     targetRevision: HEAD
     directory:

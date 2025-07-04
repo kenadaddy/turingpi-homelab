@@ -7,4 +7,4 @@ config:
       targetRevision: main
 
 applications:
-  - name: guestbook
+  - name: apps
