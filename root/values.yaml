@@ -6,5 +6,7 @@ config:
       repoURL: https://github.com/kenadaddy/turingpi-homelab
       targetRevision: main
 
-applications:
+#stacks:
+#  - 
+examples:
   - name: apps
