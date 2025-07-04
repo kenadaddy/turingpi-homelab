@@ -10,5 +10,5 @@ spec:
     app: guestbook-ui
   ports:
   - port: 80
-    targetPort: 8282
+    targetPort: 80
   
