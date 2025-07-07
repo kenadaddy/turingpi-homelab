@@ -4,6 +4,8 @@ grafana:
     type: ClusterIP
     port: 80
     targetPort: 3000
+    annotations:
+      metallb.io/ip-allocated-from-pool: default-pool
   persistence:
     type: pvc
     enabled: true
