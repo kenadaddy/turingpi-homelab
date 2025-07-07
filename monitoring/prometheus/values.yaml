@@ -1,8 +1,11 @@
 prometheus:
   service:
     enabled: true
-    type: ClusterIP
+    type: LoadBalancer
+    port: 80
     servicePort: 80
+    annotations:
+      metallb.io/ip-allocated-from-pool: default-pool
   persistentVolume:
     enabled: true
     accessModes:
