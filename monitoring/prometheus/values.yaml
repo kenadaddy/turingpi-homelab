@@ -21,7 +21,7 @@ prometheus:
   alertmanager:
     enabled: false
   prometheus-node-exporter:
-    enabled: false #true
+    enabled: true
   prometheus-pushgateway:
     enabled: false
   serverFiles:
@@ -37,15 +37,15 @@ prometheus:
         #     - targets:
         #       - radarr-metrics.default.svc.cluster.local:9793
 
-        # - job_name: kube-state-metrics
-        #   honor_timestamps: true
-        #   scrape_interval: 1m
-        #   scrape_timeout: 1m
-        #   metrics_path: /metrics
-        #   scheme: http
-        #   static_configs:
-        #     - targets:
-        #       - prometheus-kube-state-metrics.default.svc.cluster.local:8080
+        - job_name: kube-state-metrics
+          honor_timestamps: true
+          scrape_interval: 1m
+          scrape_timeout: 1m
+          metrics_path: /metrics
+          scheme: http
+          static_configs:
+            - targets:
+              - prometheus-kube-state-metrics.default.svc.cluster.local:8080
 
         # - job_name: 'speedtest-exporter'
         #   scrape_interval: 1h
