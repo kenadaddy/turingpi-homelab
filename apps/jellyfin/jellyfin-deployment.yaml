@@ -14,7 +14,7 @@ spec:
         app: jellyfin
     spec:
       containers:
-        - image: jellyfin:latest
+        - image: jellyfin/jellyfin:latest
           name: jellyfin
           ports:
             - containerPort: 8096
