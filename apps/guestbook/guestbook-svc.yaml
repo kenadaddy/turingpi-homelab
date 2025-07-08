@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: guestbook-ui
+  name: guestbook-svc
   annotations:
     metallb.io/ip-allocated-from-pool: default-pool
 spec:
   type: LoadBalancer
   selector:
-    app: guestbook-ui
+    app: guestbook
   ports:
   - port: 80
     targetPort: 80
