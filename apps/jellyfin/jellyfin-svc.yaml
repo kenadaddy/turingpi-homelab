@@ -2,11 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: jellyfin-svc
+  annotations:
+    metallb.io/ip-allocated-from-pool: default-pool
 spec:
+  type: LoadBalancer
   selector:
     app: jellyfin
-  type: LoadBalancer
   ports:
-    - protocol: TCP
-      port: 80          # External port
-      targetPort: 8096  # Jellyfin's internal port
+  - port: 80          # External port
+    targetPort: 8096  # Jellyfin's internal port
