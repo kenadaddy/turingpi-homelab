@@ -79,7 +79,9 @@ service:
   # -- Source ranges allowed to access the LoadBalancer.
   loadBalancerSourceRanges: []
   # -- Port for the Jellyfin service.
-  port: 8096
+  port: 80
+  targetPort: 8096
+
   # -- Name of the port in the service.
   portName: service
   # -- Annotations for the service.
@@ -169,6 +171,14 @@ jellyfin:
   args: []
   # -- Additional environment variables for the container.
   env: []
+
+  # server:
+  #   service: 
+  #     type: LoadBalancer
+  #       port: 80
+  #       targetPort: 9090
+  #       annotations:
+  #         metallb.io/ip-allocated-from-pool: default-pool
 
 persistence:
   config:
