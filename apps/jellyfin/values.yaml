@@ -80,7 +80,7 @@ service:
   loadBalancerSourceRanges: []
   # -- Port for the Jellyfin service.
   port: 80
-  targetPort: 8096
+  #targetPort: 8096
 
   # -- Name of the port in the service.
   portName: service
@@ -92,7 +92,7 @@ service:
   # -- External traffic policy (Cluster or Local).
   # externalTrafficPolicy: Cluster
   # -- NodePort for the service (if applicable).
-  # nodePort: 
+  nodePort: 8096
 
 # -- Ingress configuration. See: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
