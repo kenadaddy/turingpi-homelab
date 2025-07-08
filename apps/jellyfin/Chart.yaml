@@ -11,6 +11,6 @@ keywords:
 version: 2.3.0
 appVersion: 10.10.7
 dependencies:
-  - name: grafana
+  - name: jellyfin
     version: 2.3.0
     repository: https://jellyfin.github.io/jellyfin-helm
