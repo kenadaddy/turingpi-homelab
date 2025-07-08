@@ -6,7 +6,7 @@ prometheus:
     type: LoadBalancer
     port: 80
     targetPort: 9090
-    servicePort: 9090
+    servicePort: 9080
     annotations:
       metallb.io/ip-allocated-from-pool: default-pool
   persistentVolume:
