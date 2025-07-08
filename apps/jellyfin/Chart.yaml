@@ -10,3 +10,7 @@ keywords:
   - self-hosted
 version: 2.3.0
 appVersion: 10.10.7
+dependencies:
+  - name: grafana
+    version: 2.3.0
+    repository: https://jellyfin.github.io/jellyfin-helm
