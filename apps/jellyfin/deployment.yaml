@@ -32,7 +32,7 @@ spec:
               name: jellyfin-config
             - mountPath: /storage/media
               name: media
-          restartPolicy: Always
+          
       volumes:
       - name: media
         persistentVolumeClaim:
