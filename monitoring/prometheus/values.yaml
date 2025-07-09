@@ -45,7 +45,7 @@ prometheus:
           scheme: http
           static_configs:
             - targets:
-              - prometheus-kube-state-metrics.default.svc.cluster.local:8080
+              - prometheus-kube-state-metrics:8080
 
         # - job_name: 'speedtest-exporter'
         #   scrape_interval: 1h
