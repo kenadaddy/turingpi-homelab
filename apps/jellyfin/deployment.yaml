@@ -27,16 +27,16 @@ spec:
           #     memory: 256Mi
           #     cpu: "0.2"
 
-          volumeMounts:
-            - mountPath: /storage/config
-              name: jellyfin-config
-            - mountPath: /storage/media
-              name: media
+      #     volumeMounts:
+      #       - mountPath: /storage/config
+      #         name: jellyfin-config
+      #       - mountPath: /storage/media
+      #         name: media
           
-      volumes:
-      - name: media
-        persistentVolumeClaim:
-          claimName: media-pvc
-      - name: jellyfin-config
-        persistentVolumeClaim:
-          claimName: jellyfin-config
+      # volumes:
+      # - name: media
+      #   persistentVolumeClaim:
+      #     claimName: media-pvc
+      # - name: jellyfin-config
+      #   persistentVolumeClaim:
+      #     claimName: jellyfin-config
