@@ -1,0 +1,43 @@
+# Create a storage class from longhorn default host storage class
+#  allowing data deletion and volume expansion.
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: storage-media
+provisioner:  driver.longhorn.io
+reclaimPolicy: Delete
+allowVolumeExpansion: True
+---
+# Create a persistent volume to mount local media folder into container
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: media-pv
+  labels:
+    volume-type: media-volume
+spec:
+  capacity:
+    storage: 1Ti
+  accessModes:
+    - ReadOnlyMany
+  claimRef:
+    kind: PersistentVolumeClaim
+    name: media-pvc
+    namespace: jellyfin
+  storageClassName: storage-media
+  hostPath:
+    path: /storage/media
+    type: Directory
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: media-pvc
+spec:
+  storageClassName: storage-media
+  volumeName: media-pv
+  accessModes:
+    - ReadOnlyMany
+  resources:
+    requests:
+      storage: 1Ti

@@ -27,13 +27,16 @@ spec:
               memory: 256Mi
               cpu: "0.2"
 
-      #     volumeMounts:
-      #       - mountPath: /config
-      #         name: config
-      #       - mountPath: /media
-      #         name: media
-      # volumes:
-      #   - name: config
-      #     emptyDir: {}  # Replace with a PVC for persistence
-      #   - name: media
-      #     emptyDir: {}  # Replace with actual media mount (PVC, hostPath, etc.)
+          volumeMounts:
+            - mountPath: /storage/config
+              name: jellyfin-config
+            - mountPath: /storage/media
+              name: media
+          restartPolicy: Always
+      volumes:
+      - name: media
+        persistentVolumeClaim:
+          claimName: media-pvc
+      - name: jellyfin-config
+        persistentVolumeClaim:
+          claimName: jellyfin-config
