@@ -8,7 +8,7 @@ provisioner:  driver.longhorn.io
 reclaimPolicy: Delete
 allowVolumeExpansion: True
 ---
-# Create a persistent volume to mount local media folder into container
+# Create a persistent volume to mount media folder into container
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -26,7 +26,7 @@ spec:
     namespace: jellyfin
   storageClassName: storage-media
   hostPath:
-    path: /storage/media
+    path: /storage
     type: Directory
 ---
 apiVersion: v1

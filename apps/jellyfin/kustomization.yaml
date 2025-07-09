@@ -4,3 +4,5 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
+  - storage-config.yaml
+  - storage-media.yaml
